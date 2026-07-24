@@ -5,17 +5,32 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=0.25,maximum-scale=5,user-scalable=yes,viewport-fit=cover">
   <title>磨飯 SMT T2S 1280×800</title>
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="app-shell.css?v=smt-t2s-1280x800-rebuild.40">
+  <link rel="stylesheet" href="app-shell.css?v=smt-t2s-1280x800-iphone-qa.01">
 </head>
 <body>
   <main id="viewport">
-    <section id="stage"><iframe id="page" title="磨飯 SMT"></iframe></section>
+    <header id="preview-toolbar" aria-label="iPhone 視覺驗收控制">
+      <section>
+        <strong>SMT 1280×800 視覺驗收</strong>
+        <span id="device-hud-detail">正在量度畫面…</span>
+      </section>
+      <nav>
+        <button type="button" data-preview-action="fit">適合</button>
+        <button type="button" data-preview-action="out">－</button>
+        <button type="button" data-preview-action="native">100%</button>
+        <button type="button" data-preview-action="in">＋</button>
+        <button type="button" data-preview-action="hud">資訊</button>
+      </nav>
+    </header>
+    <section id="preview-floor">
+      <section id="stage"><iframe id="page" title="磨飯 SMT"></iframe></section>
+    </section>
     <aside id="device-hud" aria-live="polite">
       <strong>T2S 原比例預覽 1280×800</strong>
-      <span id="device-hud-detail">正在量度畫面…</span>
-      <span>iPhone 可直屏或橫屏查看；使用 Safari 雙指放大、縮小及移動畫面檢查細節。</span>
+      <span>黃色邊框內＝Sunmi T2S 實際畫面；黑色區域只屬於 iPhone 驗收器。</span>
+      <span>可旋轉手機、縮放及拖動畫面檢查細節。Sunmi T2S 1280×800 會自動使用原生模式。</span>
     </aside>
   </main>
-  <script type="module" src="app-loader.js?v=smt-t2s-1280x800-rebuild.40"></script>
+  <script type="module" src="app-loader.js?v=smt-t2s-1280x800-iphone-qa.01"></script>
 </body>
 </html>
