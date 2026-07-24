@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../design-system/tokens.css" />
     <link rel="stylesheet" href="../../design-system/reset.css" />
     <link rel="stylesheet" href="../../design-system/primitives.css" />
+    <link rel="stylesheet" href="../../components/navigation.css" />
     <link rel="stylesheet" href="./shell.css" />
   </head>
   <body>
@@ -28,32 +29,11 @@
         <section class="shell-placeholder" aria-labelledby="shell-placeholder-title">
           <p class="shell-eyebrow">Native Shell Foundation</p>
           <h1 id="shell-placeholder-title">SMT 1280×800 原生骨架</h1>
-          <p>目前只驗證全域頂欄、工作區及底部導航。功能頁會按切片逐步重建。</p>
+          <p>目前驗證全域頂欄、工作區及共用底部導航。功能頁會按切片逐步重建。</p>
         </section>
       </main>
 
-      <nav class="smt-navigation" aria-label="主要功能">
-        <button class="smt-nav-item is-active" type="button" data-route="order" aria-current="page">
-          <span aria-hidden="true">點</span>
-          <strong>點單</strong>
-        </button>
-        <button class="smt-nav-item" type="button" data-route="orders">
-          <span aria-hidden="true">單</span>
-          <strong>訂單</strong>
-        </button>
-        <button class="smt-nav-item" type="button" data-route="dine">
-          <span aria-hidden="true">桌</span>
-          <strong>堂食</strong>
-        </button>
-        <button class="smt-nav-item" type="button" data-route="soldout">
-          <span aria-hidden="true">售</span>
-          <strong>售罄</strong>
-        </button>
-        <button class="smt-nav-item" type="button" data-route="more">
-          <span aria-hidden="true">多</span>
-          <strong>更多</strong>
-        </button>
-      </nav>
+      <div id="navigation-slot"></div>
     </div>
     <script type="module" src="./shell.js"></script>
   </body>
