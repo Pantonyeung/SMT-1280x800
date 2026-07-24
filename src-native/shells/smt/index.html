@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-HK">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#f8f6f2" />
+    <title>磨飯 SMT｜Native 1280×800</title>
+    <link rel="stylesheet" href="../../design-system/tokens.css" />
+    <link rel="stylesheet" href="../../design-system/reset.css" />
+    <link rel="stylesheet" href="../../design-system/primitives.css" />
+    <link rel="stylesheet" href="./shell.css" />
+  </head>
+  <body>
+    <div class="smt-shell" data-shell="smt">
+      <header class="smt-header" aria-label="全域狀態列">
+        <div class="smt-brand" aria-label="磨飯 SMT">
+          <span class="smt-brand-mark" aria-hidden="true">磨</span>
+          <strong>磨飯 SMT</strong>
+        </div>
+        <div class="smt-header-context">
+          <span class="smt-terminal">主收銀機</span>
+          <span class="smt-operation"><i aria-hidden="true"></i>接單中</span>
+          <span class="smt-clock" data-role="clock" aria-live="off">--:--</span>
+        </div>
+      </header>
+
+      <main class="smt-workspace" id="feature-slot" tabindex="-1">
+        <section class="shell-placeholder" aria-labelledby="shell-placeholder-title">
+          <p class="shell-eyebrow">Native Shell Foundation</p>
+          <h1 id="shell-placeholder-title">SMT 1280×800 原生骨架</h1>
+          <p>目前只驗證全域頂欄、工作區及底部導航。功能頁會按切片逐步重建。</p>
+        </section>
+      </main>
+
+      <nav class="smt-navigation" aria-label="主要功能">
+        <button class="smt-nav-item is-active" type="button" data-route="order" aria-current="page">
+          <span aria-hidden="true">點</span>
+          <strong>點單</strong>
+        </button>
+        <button class="smt-nav-item" type="button" data-route="orders">
+          <span aria-hidden="true">單</span>
+          <strong>訂單</strong>
+        </button>
+        <button class="smt-nav-item" type="button" data-route="dine">
+          <span aria-hidden="true">桌</span>
+          <strong>堂食</strong>
+        </button>
+        <button class="smt-nav-item" type="button" data-route="soldout">
+          <span aria-hidden="true">售</span>
+          <strong>售罄</strong>
+        </button>
+        <button class="smt-nav-item" type="button" data-route="more">
+          <span aria-hidden="true">多</span>
+          <strong>更多</strong>
+        </button>
+      </nav>
+    </div>
+    <script type="module" src="./shell.js"></script>
+  </body>
+</html>
