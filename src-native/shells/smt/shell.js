@@ -1,44 +1,33 @@
-const clock = document.querySelector('[data-role="clock"]');
-const navigation = document.querySelector('.smt-navigation');
+import { createNavigation, setNavigationRoute } from '../../components/navigation.js';
+import { startStatusClock } from '../../components/status-clock.js';
+
+const SMT_ROUTES = Object.freeze(['order', 'orders', 'dine', 'soldout', 'more']);
+const navigationSlot = document.getElementById('navigation-slot');
 const featureSlot = document.getElementById('feature-slot');
+const clock = document.querySelector('[data-role="clock"]');
 
-const routeLabels = Object.freeze({
-  order: '點單',
-  orders: '訂單',
-  dine: '堂食',
-  soldout: '售罄',
-  more: '更多'
-});
+let activeRoute = 'order';
+let navigation;
 
-function updateClock() {
-  if (!clock) return;
-  clock.textContent = new Intl.DateTimeFormat('zh-HK', {
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: false
-  }).format(new Date());
+function selectRoute(routeId) {
+  if (!SMT_ROUTES.includes(routeId) || !featureSlot || !navigation) return;
+
+  activeRoute = routeId;
+  featureSlot.dataset.route = routeId;
+  featureSlot.setAttribute('aria-label', `${routeId} 功能區`);
+  setNavigationRoute(navigation, routeId);
+  featureSlot.focus({ preventScroll: true });
 }
 
-function selectRoute(route) {
-  if (!routeLabels[route] || !navigation || !featureSlot) return;
-
-  navigation.querySelectorAll('[data-route]').forEach((button) => {
-    const isActive = button.dataset.route === route;
-    button.classList.toggle('is-active', isActive);
-    if (isActive) button.setAttribute('aria-current', 'page');
-    else button.removeAttribute('aria-current');
+if (navigationSlot) {
+  navigation = createNavigation({
+    routes: SMT_ROUTES,
+    activeRoute,
+    className: 'smt-navigation',
+    onSelect: selectRoute,
   });
-
-  featureSlot.dataset.route = route;
-  featureSlot.setAttribute('aria-label', `${routeLabels[route]}功能區`);
+  navigationSlot.append(navigation);
 }
 
-navigation?.addEventListener('click', (event) => {
-  const button = event.target.closest('[data-route]');
-  if (!(button instanceof HTMLButtonElement)) return;
-  selectRoute(button.dataset.route);
-});
-
-updateClock();
-setInterval(updateClock, 30_000);
-selectRoute('order');
+if (clock instanceof HTMLElement) startStatusClock(clock);
+selectRoute(activeRoute);
