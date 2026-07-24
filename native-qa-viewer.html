@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-HK">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=1280, user-scalable=yes, minimum-scale=0.1, maximum-scale=5"
+    />
+    <meta name="theme-color" content="#f8f6f2" />
+    <title>磨飯 SMT｜1280×800 視覺驗收</title>
+    <link rel="stylesheet" href="/src-native/qa-viewer/viewer.css" />
+  </head>
+  <body>
+    <main class="qa-page">
+      <section class="qa-canvas" aria-label="SMT 1280×800 固定畫布">
+        <iframe
+          id="qa-frame"
+          title="SMT 1280×800 預覽"
+          src="/index.html"
+          width="1280"
+          height="800"
+        ></iframe>
+      </section>
+
+      <section class="qa-controls" aria-labelledby="qa-controls-title">
+        <div>
+          <p class="qa-eyebrow">iPhone Visual QA</p>
+          <h1 id="qa-controls-title">固定 1280×800 原比例畫布</h1>
+          <p>預設為檢查模式，可直接雙指放大、縮小及拖動畫面。切換至操作模式後可點擊畫面內功能。</p>
+        </div>
+
+        <div class="qa-actions" role="group" aria-label="預覽設定">
+          <button type="button" data-target="/index.html" class="is-active">目前完整 SMT</button>
+          <button type="button" data-target="/src-native/shells/smt/index.html">Native Rebuild</button>
+          <button type="button" id="interaction-toggle" aria-pressed="false">檢查模式</button>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src-native/qa-viewer/viewer.js"></script>
+  </body>
+</html>
