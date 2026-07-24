@@ -1,0 +1,49 @@
+.mf-navigation {
+  min-width: 0;
+  display: grid;
+  background: var(--mf-color-surface);
+  border-top: 1px solid var(--mf-color-line);
+}
+
+.mf-navigation__item {
+  min-width: 0;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: var(--mf-space-1);
+  padding: var(--mf-space-1) var(--mf-space-2);
+  border: 1px solid transparent;
+  border-radius: var(--mf-radius-md);
+  background: transparent;
+  color: var(--mf-color-muted);
+}
+
+.mf-navigation__mark {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--mf-radius-sm);
+  background: color-mix(in srgb, var(--mf-color-line) 56%, white);
+  font-size: var(--mf-font-size-sm);
+  font-weight: 900;
+}
+
+.mf-navigation__label {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--mf-font-size-sm);
+}
+
+.mf-navigation__item.is-active {
+  background: var(--mf-color-brand-soft);
+  border-color: color-mix(in srgb, var(--mf-color-brand) 28%, var(--mf-color-line));
+  color: var(--mf-color-brand);
+}
+
+.mf-navigation__item.is-active .mf-navigation__mark {
+  background: var(--mf-color-brand);
+  color: var(--mf-color-surface);
+}
