@@ -14,25 +14,26 @@
   <body>
     <div class="smt-shell" data-shell="smt">
       <header class="smt-header" aria-label="全域狀態列">
-        <div class="smt-brand" aria-label="磨飯 SMT">
-          <span class="smt-brand-mark" aria-hidden="true">磨</span>
-          <strong>磨飯 SMT</strong>
-        </div>
+        <div class="smt-brand"><span class="smt-brand-mark">磨</span><strong>磨飯 SMT</strong></div>
         <div class="smt-header-context">
-          <span class="smt-terminal">主收銀機</span>
-          <span class="smt-operation"><i aria-hidden="true"></i>接單中</span>
-          <span class="smt-clock" data-role="clock" aria-live="off">--:--</span>
+          <span class="smt-terminal">主收銀機</span><span class="smt-operation"><i></i>接單中</span><span class="smt-clock" data-role="clock">--:--</span>
         </div>
       </header>
 
       <main class="smt-workspace" id="feature-slot" tabindex="-1">
-        <section class="shell-placeholder" aria-labelledby="shell-placeholder-title">
-          <p class="shell-eyebrow">Native Shell Foundation</p>
-          <h1 id="shell-placeholder-title">SMT 1280×800 原生骨架</h1>
-          <p>目前驗證全域頂欄、工作區及共用底部導航。功能頁會按切片逐步重建。</p>
+        <section class="smt-order" data-feature="order">
+          <aside class="smt-categories" aria-label="產品分類"><div id="category-list"></div></aside>
+          <section class="smt-products" aria-labelledby="product-heading">
+            <header class="smt-section-header"><div><p>現場點單</p><h1 id="product-heading">人氣推薦</h1></div><span>視覺驗收資料</span></header>
+            <div class="smt-product-grid" id="product-grid"></div>
+          </section>
+          <aside class="smt-cart" aria-labelledby="cart-heading">
+            <header><div><p>本張訂單</p><h2 id="cart-heading">購物車</h2></div><button type="button" id="clear-cart">清空</button></header>
+            <div class="smt-cart-items" id="cart-items"><p class="smt-empty">尚未加入餐點</p></div>
+            <footer><div><span>共 <strong id="cart-count">0</strong> 件</span><strong id="cart-total">$0</strong></div><button type="button" id="checkout-button" disabled>前往結帳</button></footer>
+          </aside>
         </section>
       </main>
-
       <div id="navigation-slot"></div>
     </div>
     <script type="module" src="./shell.js"></script>
