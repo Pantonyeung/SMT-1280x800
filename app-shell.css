@@ -2,16 +2,77 @@
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Noto Sans TC", sans-serif;
+  color: #fff;
+  background: #050505;
+}
 html,
 body {
   margin: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background: #f8f6f2;
+  background: #050505;
   overscroll-behavior: none;
 }
+body {
+  touch-action: manipulation;
+}
 #viewport {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: #050505;
+}
+#preview-toolbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 30;
+  min-height: 64px;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: max(8px, env(safe-area-inset-top)) max(10px, env(safe-area-inset-right)) 8px max(10px, env(safe-area-inset-left));
+  background: rgba(0, 0, 0, .88);
+  border-bottom: 1px solid rgba(255, 255, 255, .16);
+  backdrop-filter: blur(12px);
+}
+#preview-toolbar section {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+#preview-toolbar strong {
+  color: #ffd447;
+  font-size: 14px;
+}
+#preview-toolbar span {
+  color: #e7e7e7;
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#preview-toolbar nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+}
+#preview-toolbar button {
+  min-height: 34px;
+  padding: 0 9px;
+  border: 1px solid rgba(255, 255, 255, .24);
+  border-radius: 10px;
+  background: #1d1d1d;
+  color: #fff;
+  font: 800 12px/1 inherit;
+}
+#preview-floor {
   position: fixed;
   inset: 0;
   overflow: hidden;
@@ -24,13 +85,9 @@ body {
   height: 100%;
   background: #f8f6f2;
   overflow: hidden;
-  transform: none !important;
   outline: 0;
   box-shadow: none;
-}
-html[data-preview-mode="native"] #stage {
-  outline: 0;
-  box-shadow: none;
+  transform-origin: top left;
 }
 #page {
   width: 100%;
@@ -44,36 +101,74 @@ html[data-preview-mode="native"] #stage {
 #device-hud {
   position: fixed;
   left: max(10px, env(safe-area-inset-left));
-  top: max(10px, env(safe-area-inset-top));
-  z-index: 9000;
+  bottom: max(10px, env(safe-area-inset-bottom));
+  z-index: 40;
   max-width: min(620px, calc(100vw - 20px));
   padding: 8px 11px;
-  border: 1px solid rgba(255,255,255,.3);
+  border: 1px solid rgba(255, 212, 71, .55);
   border-radius: 9px;
-  background: rgba(0,0,0,.78);
+  background: rgba(0, 0, 0, .82);
   color: #fff;
-  font: 12px/1.35 -apple-system,BlinkMacSystemFont,"PingFang HK",sans-serif;
+  font: 12px/1.35 -apple-system, BlinkMacSystemFont, "PingFang HK", sans-serif;
   pointer-events: none;
   backdrop-filter: blur(8px);
 }
-#device-hud strong {
+#device-hud strong,
+#device-hud span {
   display: block;
+}
+#device-hud strong {
   color: #ffd45c;
   font-size: 13px;
 }
 #device-hud span {
-  display: block;
   margin-top: 2px;
   color: #e4e4e4;
 }
 #device-hud[hidden] {
   display: none;
 }
+html[data-preview-mode="iphone"] #preview-toolbar {
+  display: flex;
+}
+html[data-preview-mode="iphone"] #preview-floor {
+  top: var(--preview-toolbar-height, 64px);
+  overflow: auto;
+  padding: 18px;
+  background: #050505;
+  -webkit-overflow-scrolling: touch;
+}
+html[data-preview-mode="iphone"] #stage {
+  inset: auto;
+  width: 1280px;
+  height: 800px;
+  border: 4px solid #ffd400;
+  border-radius: 8px;
+  background: #f8f6f2;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .35), 0 18px 60px rgba(0, 0, 0, .6);
+}
+html[data-preview-mode="iphone"] #page {
+  width: 1280px;
+  height: 800px;
+}
 @media (max-width: 600px) {
+  #preview-toolbar {
+    align-items: start;
+  }
+  #preview-toolbar nav {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    gap: 5px;
+  }
+  #preview-toolbar button {
+    min-height: 32px;
+    padding: 0 7px;
+    font-size: 11px;
+  }
   #device-hud {
     max-width: calc(100vw - 16px);
     left: max(8px, env(safe-area-inset-left));
-    top: max(8px, env(safe-area-inset-top));
+    bottom: max(8px, env(safe-area-inset-bottom));
     padding: 7px 9px;
     font-size: 11px;
   }
