@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f6f1eb">
+  <title>磨飯 MoreFun OS｜Native Rebuild</title>
+  <link rel="stylesheet" href="./styles/tokens.css">
+  <link rel="stylesheet" href="./styles/base.css">
+  <link rel="stylesheet" href="./styles/shell.css">
+</head>
+<body>
+  <div id="app" class="app-shell" data-device="smt">
+    <header class="topbar">
+      <section class="brand-block" aria-label="品牌與模式">
+        <span class="brand-mark" aria-hidden="true">磨</span>
+        <div>
+          <strong>磨飯 MoreFun OS</strong>
+          <small id="mode-label">SMT 收銀機模式</small>
+        </div>
+      </section>
+      <section class="status-strip" aria-label="營運狀態">
+        <span class="status-pill is-live">接單中</span>
+        <span class="status-pill">11:00–20:00</span>
+        <span class="status-pill">本機正常</span>
+      </section>
+    </header>
+
+    <main class="workspace">
+      <aside class="rail" aria-label="分類">
+        <button class="rail-item is-active" type="button">人氣推薦</button>
+        <button class="rail-item" type="button">飯團</button>
+        <button class="rail-item" type="button">飯團套餐</button>
+        <button class="rail-item" type="button">便當</button>
+        <button class="rail-item" type="button">紫米沙律</button>
+        <button class="rail-item" type="button">小食</button>
+        <button class="rail-item" type="button">飲品</button>
+      </aside>
+
+      <section class="content-panel" aria-label="主內容">
+        <header class="section-heading">
+          <div>
+            <small>Native Rebuild V1</small>
+            <h1>點單</h1>
+          </div>
+          <div class="heading-actions">
+            <button type="button">搜尋</button>
+            <button type="button">快捷模式</button>
+          </div>
+        </header>
+
+        <section class="product-grid" aria-label="產品列表">
+          <article class="product-card"><span>F4</span><strong>招牌紫米飯團</strong><small>人氣推薦</small><b>$45</b></article>
+          <article class="product-card"><span>12</span><strong>肉燥便當</strong><small>可選飯量</small><b>$48</b></article>
+          <article class="product-card"><span>C12</span><strong>咖喱便當</strong><small>咖喱飯底</small><b>$50</b></article>
+          <article class="product-card"><span>V12</span><strong>菜飯便當</strong><small>可走蛋</small><b>$47</b></article>
+          <article class="product-card"><span>A餐</span><strong>紫米套餐</strong><small>飯團＋小食＋飲品</small><b>$58</b></article>
+          <article class="product-card"><span>S1</span><strong>套餐小食</strong><small>可配搭套餐</small><b>$18</b></article>
+        </section>
+      </section>
+
+      <aside class="cart-panel" aria-label="購物車">
+        <header>
+          <div><small>目前訂單</small><h2>購物車</h2></div>
+          <span class="cart-count">0</span>
+        </header>
+        <div class="cart-empty">
+          <strong>未有餐點</strong>
+          <span>從左邊選擇產品開始點單</span>
+        </div>
+        <footer>
+          <div><span>合計</span><strong>$0</strong></div>
+          <button type="button" disabled>前往結帳</button>
+        </footer>
+      </aside>
+    </main>
+
+    <nav class="bottom-nav" aria-label="主要功能">
+      <button class="is-active" type="button">點單</button>
+      <button type="button">訂單</button>
+      <button type="button">堂食</button>
+      <button type="button">售罄</button>
+      <button type="button">更多</button>
+    </nav>
+  </div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
