@@ -6,12 +6,13 @@ html,
 body {
   margin: 0;
   min-height: 100%;
-  background: #f8f6f2;
-  color: #251f1b;
+  background: #000;
+  color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
 }
 
 body {
+  min-height: 100dvh;
   padding: max(20px, env(safe-area-inset-top)) 18px max(24px, env(safe-area-inset-bottom));
 }
 
@@ -33,12 +34,12 @@ body {
   display: grid;
   place-items: center;
   flex: 0 0 auto;
+  border: 3px solid #ffd400;
   border-radius: 18px;
-  background: #ef5218;
-  color: #fff;
+  background: #111;
+  color: #ffd400;
   font-size: 24px;
   font-weight: 900;
-  box-shadow: 0 12px 30px rgba(76, 46, 28, 0.16);
 }
 
 .selector-header p,
@@ -52,7 +53,7 @@ body {
 
 .selector-header p,
 .selector-kicker {
-  color: #ef5218;
+  color: #ffd400;
   font-size: 12px;
   font-weight: 900;
   letter-spacing: 0.06em;
@@ -61,6 +62,7 @@ body {
 
 .selector-header h1 {
   margin-top: 4px;
+  color: #fff;
   font-size: clamp(24px, 5.8vw, 38px);
   line-height: 1.12;
 }
@@ -78,24 +80,15 @@ body {
   flex-direction: column;
   gap: 22px;
   padding: 24px;
-  border: 1px solid #e7dfd8;
+  border: 4px solid #ffd400;
   border-radius: 24px;
-  background: #fff;
-  color: inherit;
+  background: #111;
+  color: #fff;
   text-decoration: none;
-  box-shadow: 0 14px 36px rgba(76, 46, 28, 0.1);
 }
 
 .selector-card:active {
   transform: translateY(1px);
-}
-
-.selector-card--smm {
-  background: linear-gradient(180deg, #fff 0%, #fff7f1 100%);
-}
-
-.selector-card--smt {
-  background: linear-gradient(180deg, #fff 0%, #f6f4f0 100%);
 }
 
 .selector-device {
@@ -104,15 +97,17 @@ body {
   display: inline-flex;
   align-items: center;
   padding: 0 14px;
+  border: 2px solid #ffd400;
   border-radius: 999px;
-  background: #fff2e9;
-  color: #ef5218;
+  background: #000;
+  color: #ffd400;
   font-size: 13px;
   font-weight: 900;
 }
 
 .selector-card h2 {
   margin-top: 8px;
+  color: #ffd400;
   font-size: 44px;
   line-height: 1;
 }
@@ -120,12 +115,13 @@ body {
 .selector-card strong {
   display: block;
   margin-top: 8px;
+  color: #fff;
   font-size: 20px;
 }
 
 .selector-card div > p:last-child {
   margin-top: 12px;
-  color: #756b64;
+  color: #d7d7d7;
   font-size: 15px;
   line-height: 1.6;
 }
@@ -137,14 +133,14 @@ body {
   justify-content: center;
   margin-top: auto;
   border-radius: 16px;
-  background: #ef5218;
-  color: #fff;
+  background: #ffd400;
+  color: #000;
   font-weight: 900;
 }
 
 .selector-note {
   padding: 18px 4px 0;
-  color: #756b64;
+  color: #c9c9c9;
   font-size: 13px;
   line-height: 1.6;
   text-align: center;
