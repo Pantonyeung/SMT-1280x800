@@ -8,7 +8,7 @@
 
 ## 2. Reference hierarchy
 
-### Order page
+### 2.1 Order page
 
 Use the latest Codex / product-modified order page as the functional and interaction reference.
 
@@ -27,7 +27,7 @@ Do not copy:
 - fixed-position snapshots
 - page-specific z-index repairs
 
-### All non-order pages and overall operational format
+### 2.2 All non-order SMT pages and overall operational format
 
 Use the earlier complete SMT format as the visual, information-order and workflow reference.
 
@@ -38,6 +38,43 @@ Reference source:
 - Relevant pages: checkout, orders, dine, soldout, more, global status bar, bottom navigation and cross-page operating rhythm.
 
 This source still uses a 1920px logical canvas and runtime scaling. Therefore it is reference-only and must not be copied as layout implementation.
+
+### 2.3 SMM mobile application
+
+Use the approved SMM mobile repository and uploaded package as the functional, route and mobile interaction reference.
+
+Reference source:
+
+- Repository: `Pantonyeung/morefunos-smm`
+- Branch: `feat/smm-mobile-v1`
+- Package: `morefunos-smm-feat-smm-mobile-v1.zip`
+- Locked documents:
+  - `SMM_PROJECT_BASELINE.md`
+  - `docs/SMM_COMBINATION_ARCHITECTURE_V1.md`
+  - `docs/SMM_UI_LOCK_V1.md`
+  - `docs/SMM_IMPLEMENTATION_PLAN.md`
+
+Relevant scope:
+
+- mobile-first operational flow
+- iPhone and Android safe-area behaviour
+- SMM route map
+- dashboard structure
+- bottom navigation: `工作台｜點單｜訂單｜堂食｜更多`
+- mobile menu, product, cart, checkout and order-success flow
+- mobile cards, sheets and fixed bottom actions
+- complete operational access to orders, dine-in, soldout, reports, reconciliation, print jobs and system status
+- print handoff boundary between SMM and SMT
+
+Do not copy:
+
+- separate duplicated domain logic
+- old `styles.css` / `styles-v2.css` layering
+- old `app.js` / `app-v2.js` parallel runtime structure
+- page-specific visual fixes
+- any code that diverges from the new shared-core architecture
+
+SMM is not a scaled-down SMT canvas. It is a native mobile shell that consumes the same feature state, actions, validation and contracts as SMT.
 
 ## 3. Required visual language
 
@@ -68,14 +105,81 @@ All profiles share:
 - data models
 - cart and order state
 - API and sync
-- payment and print workflow
+- payment workflow
+- print-job contract
 - permissions
 - component behaviour
 - design tokens
 
-Only shell composition and information density may differ.
+Only shell composition, navigation arrangement and information density may differ.
 
-## 5. Hard prohibitions
+## 5. SMM product contract
+
+### 5.1 Locked main navigation
+
+```text
+工作台｜點單｜訂單｜堂食｜更多
+```
+
+Cart is part of the ordering flow and is not a sixth main-navigation item.
+
+### 5.2 Locked mobile route map
+
+```text
+/login
+/dashboard
+/menu
+/product/:id
+/cart
+/checkout
+/order-success
+/orders
+/orders/:id
+/dine
+/dine/:tableId
+/soldout
+/reservations
+/reports
+/reconciliation
+/print-jobs
+/system-status
+/more
+```
+
+### 5.3 Shared-core boundary
+
+SMT and SMM must consume the same:
+
+- product and pricing rules
+- cart state
+- checkout validation
+- order identity
+- order operations
+- dine-in state
+- soldout state
+- reports and reconciliation contracts
+- offline and idempotency rules
+- print-job state
+
+SMM must not contain a second independent copy of these rules.
+
+### 5.4 Printing boundary
+
+SMM may:
+
+- create print jobs
+- inspect status
+- retry
+- cancel jobs not yet executed
+- reroute
+- request reprint
+- select copies
+
+SMM must not open direct TCP, USB or Bluetooth printer connections.
+
+SMT remains the physical print execution authority and must report the actual result back to the shared system.
+
+## 6. Hard prohibitions
 
 The native rebuild must not introduce:
 
@@ -89,8 +193,10 @@ The native rebuild must not introduce:
 - page-specific emergency z-index values
 - cross-page CSS borrowing
 - duplicated business logic between SMT and SMM
+- parallel `app.js` and `app-v2.js` product runtimes
+- parallel `styles.css` and `styles-v2.css` override chains
 
-## 6. Acceptance target
+## 7. Acceptance target
 
 ### SMT
 
@@ -105,12 +211,15 @@ The native rebuild must not introduce:
 - iPhone safe-area support
 - portrait-first operation with intentional landscape support where required
 - not a scaled-down SMT canvas
+- approved five-item bottom navigation
+- fixed primary action must remain above the device safe area and keyboard
+- no permanent side cart
 
 ### iPhone SMT QA viewer
 
 A separate QA-only viewer may scale and pan the complete 1280×800 SMT canvas. It must not be part of the production SMT or SMM shell.
 
-## 7. Build order
+## 8. Build order
 
 1. Native tokens and reset
 2. Shared application shell contract
@@ -118,11 +227,14 @@ A separate QA-only viewer may scale and pan the complete 1280×800 SMT canvas. I
 4. SMM mobile shell
 5. QA viewer
 6. Shared navigation and status components
-7. Order page reconstruction
-8. Checkout
-9. Orders
-10. Dine
-11. Soldout
-12. More
-13. API, print and device integration verification
-14. Sunmi T2S and iPhone acceptance
+7. Shared route and capability registry
+8. Order page reconstruction
+9. Mobile product and cart presentation
+10. Checkout
+11. Orders
+12. Dine
+13. Soldout
+14. More and dashboard
+15. Reports, reconciliation and system status
+16. API, print and device integration verification
+17. Sunmi T2S and iPhone acceptance
