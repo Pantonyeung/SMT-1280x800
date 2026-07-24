@@ -6,8 +6,8 @@ html,
 body {
   margin: 0;
   min-height: 100%;
-  background: #f8f6f2;
-  color: #251f1b;
+  background: #000;
+  color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
 }
 
@@ -15,6 +15,8 @@ body {
   min-height: 100dvh;
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
+  padding: max(10px, env(safe-area-inset-top)) 10px max(10px, env(safe-area-inset-bottom));
+  gap: 10px;
 }
 
 .smm-qa-toolbar {
@@ -23,9 +25,10 @@ body {
   grid-template-columns: 44px minmax(0, 1fr) auto;
   align-items: center;
   gap: 12px;
-  padding: max(10px, env(safe-area-inset-top)) 14px 10px;
-  border-bottom: 1px solid #e7dfd8;
-  background: rgba(255, 255, 255, 0.96);
+  padding: 10px 12px;
+  border: 3px solid #ffd400;
+  border-radius: 14px;
+  background: #111;
 }
 
 .smm-qa-toolbar > a {
@@ -33,10 +36,10 @@ body {
   height: 44px;
   display: grid;
   place-items: center;
-  border: 1px solid #e7dfd8;
+  border: 2px solid #ffd400;
   border-radius: 14px;
-  background: #fff;
-  color: #251f1b;
+  background: #000;
+  color: #ffd400;
   font-size: 22px;
   font-weight: 900;
   text-decoration: none;
@@ -49,7 +52,7 @@ body {
 }
 
 .smm-qa-toolbar p {
-  color: #ef5218;
+  color: #ffd400;
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 0.05em;
@@ -59,6 +62,7 @@ body {
 .smm-qa-toolbar strong {
   display: block;
   margin-top: 2px;
+  color: #fff;
   font-size: 17px;
 }
 
@@ -67,9 +71,10 @@ body {
   display: inline-flex;
   align-items: center;
   padding: 0 12px;
+  border: 2px solid #ffd400;
   border-radius: 999px;
-  background: #fff2e9;
-  color: #ef5218;
+  background: #000;
+  color: #ffd400;
   font-size: 12px;
   font-weight: 900;
 }
@@ -77,7 +82,10 @@ body {
 .smm-qa-stage {
   min-width: 0;
   min-height: 0;
-  background: #fff;
+  overflow: hidden;
+  border: 4px solid #ffd400;
+  border-radius: 18px;
+  background: #000;
 }
 
 .smm-qa-stage iframe {
@@ -90,10 +98,11 @@ body {
 }
 
 .smm-qa-note {
-  padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
-  border-top: 1px solid #e7dfd8;
-  background: #fff;
-  color: #756b64;
+  padding: 10px 14px;
+  border: 2px solid #ffd400;
+  border-radius: 12px;
+  background: #111;
+  color: #d7d7d7;
   font-size: 12px;
   line-height: 1.5;
   text-align: center;
