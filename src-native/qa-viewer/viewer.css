@@ -1,15 +1,16 @@
 html,
 body {
   margin: 0;
-  min-width: 1280px;
-  min-height: 800px;
-  background: #f8f6f2;
-  color: #251f1b;
+  min-width: 1320px;
+  min-height: 840px;
+  background: #000;
+  color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
 }
 
 body {
   overflow: visible;
+  padding: 20px;
 }
 
 .qa-page {
@@ -18,10 +19,29 @@ body {
 }
 
 .qa-canvas {
+  position: relative;
   width: 1280px;
   height: 800px;
   overflow: hidden;
-  background: #ffffff;
+  border: 5px solid #ffd400;
+  background: #000;
+  box-shadow: 0 0 0 2px #000, 0 0 28px rgba(255, 212, 0, 0.42);
+}
+
+.qa-canvas::before {
+  content: "SMT 實際畫布 1280×800";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 2;
+  padding: 5px 9px;
+  border: 2px solid #ffd400;
+  border-radius: 8px;
+  background: #000;
+  color: #ffd400;
+  font-size: 12px;
+  font-weight: 900;
+  pointer-events: none;
 }
 
 .qa-canvas iframe {
@@ -29,7 +49,7 @@ body {
   width: 1280px;
   height: 800px;
   border: 0;
-  background: #ffffff;
+  background: #fff;
   pointer-events: none;
 }
 
@@ -43,9 +63,12 @@ body {
   align-items: flex-start;
   justify-content: space-between;
   gap: 32px;
-  padding: 24px 28px calc(24px + env(safe-area-inset-bottom));
-  border-top: 1px solid #e7dfd8;
-  background: #ffffff;
+  margin-top: 16px;
+  padding: 20px 24px calc(20px + env(safe-area-inset-bottom));
+  border: 3px solid #ffd400;
+  border-radius: 16px;
+  background: #111;
+  color: #fff;
 }
 
 .qa-controls h1,
@@ -55,19 +78,20 @@ body {
 
 .qa-controls h1 {
   margin-top: 4px;
+  color: #fff;
   font-size: 24px;
 }
 
 .qa-controls p:last-child {
   max-width: 720px;
   margin-top: 8px;
-  color: #756b64;
+  color: #d7d7d7;
   font-size: 16px;
   line-height: 1.55;
 }
 
 .qa-eyebrow {
-  color: #ef5218;
+  color: #ffd400;
   font-size: 13px;
   font-weight: 900;
   letter-spacing: 0.05em;
@@ -88,10 +112,10 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0 18px;
-  border: 1px solid #e7dfd8;
+  border: 2px solid #ffd400;
   border-radius: 999px;
-  background: #ffffff;
-  color: #251f1b;
+  background: #000;
+  color: #ffd400;
   font: inherit;
   font-weight: 800;
   text-decoration: none;
@@ -99,7 +123,6 @@ body {
 
 .qa-actions button.is-active,
 .qa-actions button[aria-pressed="true"] {
-  border-color: #ef5218;
-  background: #fff2e9;
-  color: #ef5218;
+  background: #ffd400;
+  color: #000;
 }
