@@ -1,21 +1,47 @@
 <!doctype html>
 <html lang="zh-HK">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=0.25,maximum-scale=5,user-scalable=yes,viewport-fit=cover">
-  <title>磨飯 SMT T2S 1280×800</title>
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="app-shell.css?v=smt-t2s-1280x800-rebuild.40">
-</head>
-<body>
-  <main id="viewport">
-    <section id="stage"><iframe id="page" title="磨飯 SMT"></iframe></section>
-    <aside id="device-hud" aria-live="polite">
-      <strong>T2S 原比例預覽 1280×800</strong>
-      <span id="device-hud-detail">正在量度畫面…</span>
-      <span>iPhone 可直屏或橫屏查看；使用 Safari 雙指放大、縮小及移動畫面檢查細節。</span>
-    </aside>
-  </main>
-  <script type="module" src="app-loader.js?v=smt-t2s-1280x800-rebuild.40"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
+    <title>磨飯｜選擇操作端</title>
+    <link rel="stylesheet" href="/src-native/qa-viewer/selector.css" />
+  </head>
+  <body>
+    <main class="selector-shell">
+      <header class="selector-header">
+        <span class="selector-mark" aria-hidden="true">磨</span>
+        <div>
+          <p>More Fun Native Rebuild</p>
+          <h1>選擇要進入嘅操作端</h1>
+        </div>
+      </header>
+
+      <section class="selector-grid" aria-label="應用選擇">
+        <a class="selector-card selector-card--smm" href="/smm-qa-viewer.html">
+          <span class="selector-device" aria-hidden="true">手機</span>
+          <div>
+            <p class="selector-kicker">Mobile Operations</p>
+            <h2>SMM</h2>
+            <strong>手機輔助營運端</strong>
+            <p>按手機闊度重新排版，協助 SMT 點單、查單、堂食、售罄及即時營運。</p>
+          </div>
+          <span class="selector-enter">進入 SMM →</span>
+        </a>
+
+        <a class="selector-card selector-card--smt" href="/smt-qa-viewer.html">
+          <span class="selector-device" aria-hidden="true">1280×800</span>
+          <div>
+            <p class="selector-kicker">Sunmi T2S / Tablet</p>
+            <h2>SMT</h2>
+            <strong>店內主收銀及接單端</strong>
+            <p>固定原生 1280×800 橫屏畫布，供 Sunmi T2S 或平板使用，不會按手機重新排版。</p>
+          </div>
+          <span class="selector-enter">進入 SMT →</span>
+        </a>
+      </section>
+
+      <p class="selector-note">此首頁屬於開發與視覺驗收入口。正式封裝前會按需要保留或移除。</p>
+    </main>
+  </body>
 </html>
