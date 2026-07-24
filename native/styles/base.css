@@ -1,0 +1,7 @@
+* { box-sizing: border-box; }
+html { color-scheme: light; font-family: var(--font-sans); background: var(--color-bg); }
+body { margin: 0; min-width: 320px; min-height: 100dvh; background: var(--color-bg); color: var(--color-text); }
+button, input, select, textarea { font: inherit; }
+button { min-width: var(--touch-target); min-height: var(--touch-target); border: 0; }
+button:focus-visible { outline: 3px solid rgb(233 95 44 / 28%); outline-offset: 2px; }
+h1, h2, p { margin: 0; }
