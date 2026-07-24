@@ -1,0 +1,50 @@
+:root {
+  --mf-color-brand: #ef5218;
+  --mf-color-brand-soft: #fff2e9;
+  --mf-color-bg: #f8f6f2;
+  --mf-color-surface: #ffffff;
+  --mf-color-text: #251f1b;
+  --mf-color-muted: #756b64;
+  --mf-color-line: #e7dfd8;
+  --mf-color-success: #39835a;
+  --mf-color-danger: #cf4338;
+  --mf-color-scrim: rgba(37, 31, 27, 0.42);
+
+  --mf-font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  --mf-font-size-xs: 12px;
+  --mf-font-size-sm: 14px;
+  --mf-font-size-md: 16px;
+  --mf-font-size-lg: 20px;
+  --mf-font-size-xl: 24px;
+
+  --mf-space-1: 4px;
+  --mf-space-2: 8px;
+  --mf-space-3: 12px;
+  --mf-space-4: 16px;
+  --mf-space-5: 20px;
+  --mf-space-6: 24px;
+
+  --mf-radius-sm: 8px;
+  --mf-radius-md: 12px;
+  --mf-radius-lg: 16px;
+  --mf-radius-pill: 999px;
+
+  --mf-shadow-card: 0 8px 24px rgba(76, 46, 28, 0.12);
+  --mf-shadow-dialog: 0 18px 48px rgba(76, 46, 28, 0.2);
+
+  --mf-touch-target: 44px;
+  --mf-smt-width: 1280px;
+  --mf-smt-height: 800px;
+  --mf-smt-header-height: 56px;
+  --mf-smt-nav-height: 64px;
+
+  --mf-layer-base: 0;
+  --mf-layer-sticky: 10;
+  --mf-layer-overlay: 20;
+  --mf-layer-dialog: 30;
+  --mf-layer-toast: 40;
+
+  --mf-motion-fast: 120ms;
+  --mf-motion-normal: 200ms;
+  --mf-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
