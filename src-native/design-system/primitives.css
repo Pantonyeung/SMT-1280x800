@@ -1,0 +1,44 @@
+.mf-surface {
+  background: var(--mf-color-surface);
+  border: 1px solid var(--mf-color-line);
+  border-radius: var(--mf-radius-lg);
+}
+
+.mf-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--mf-space-2);
+  min-height: var(--mf-touch-target);
+  padding: 0 var(--mf-space-4);
+  border: 1px solid var(--mf-color-line);
+  border-radius: var(--mf-radius-md);
+  background: var(--mf-color-surface);
+  color: var(--mf-color-text);
+  font-weight: 800;
+}
+
+.mf-button[data-variant="primary"] {
+  border-color: var(--mf-color-brand);
+  background: var(--mf-color-brand);
+  color: #fff;
+}
+
+.mf-badge {
+  display: inline-grid;
+  min-width: 24px;
+  min-height: 24px;
+  place-items: center;
+  padding: 0 6px;
+  border-radius: var(--mf-radius-pill);
+  background: var(--mf-color-danger);
+  color: #fff;
+  font-size: var(--mf-font-size-xs);
+  font-weight: 800;
+}
+
+.mf-page-title {
+  margin: 0;
+  font-size: var(--mf-font-size-xl);
+  line-height: 1.2;
+}
