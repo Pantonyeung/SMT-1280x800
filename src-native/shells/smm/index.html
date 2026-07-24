@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-HK">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#f8f6f2" />
+    <title>磨飯 SMM｜Native Mobile</title>
+    <link rel="stylesheet" href="../../design-system/tokens.css" />
+    <link rel="stylesheet" href="../../design-system/reset.css" />
+    <link rel="stylesheet" href="../../design-system/primitives.css" />
+    <link rel="stylesheet" href="../../components/navigation.css" />
+    <link rel="stylesheet" href="./shell.css" />
+  </head>
+  <body>
+    <div class="smm-shell" data-shell="smm">
+      <header class="smm-header" aria-label="全域狀態列">
+        <div class="smm-header__topline">
+          <div class="smm-brand" aria-label="磨飯 SMM">
+            <span class="smm-brand__mark" aria-hidden="true">磨</span>
+            <div>
+              <strong>磨飯 SMM</strong>
+              <small>手機營運端</small>
+            </div>
+          </div>
+          <span class="smm-clock" data-role="clock" aria-live="off">--:--</span>
+        </div>
+        <div class="smm-status-row" aria-label="營運狀態">
+          <span class="smm-status smm-status--online"><i aria-hidden="true"></i>接單中</span>
+          <span class="smm-status">主店</span>
+          <span class="smm-status">同步正常</span>
+        </div>
+      </header>
+
+      <main class="smm-workspace" id="feature-slot" tabindex="-1">
+        <section class="smm-dashboard" aria-labelledby="smm-dashboard-title">
+          <div class="smm-dashboard__intro">
+            <p class="smm-eyebrow">Native Mobile Foundation</p>
+            <h1 id="smm-dashboard-title">工作台</h1>
+            <p>手機端只保留即時營運所需資訊，點單、訂單、堂食及更多功能會逐頁重建。</p>
+          </div>
+
+          <div class="smm-metric-grid" aria-label="即時摘要">
+            <article class="smm-metric">
+              <span>待處理</span>
+              <strong>0</strong>
+              <small>新單及核對</small>
+            </article>
+            <article class="smm-metric">
+              <span>可取餐</span>
+              <strong>0</strong>
+              <small>已完成訂單</small>
+            </article>
+          </div>
+
+          <section class="smm-quick-section" aria-labelledby="smm-quick-title">
+            <div class="smm-section-heading">
+              <div>
+                <p class="smm-eyebrow">Quick Actions</p>
+                <h2 id="smm-quick-title">快捷操作</h2>
+              </div>
+            </div>
+            <div class="smm-quick-grid">
+              <button type="button" data-route-shortcut="order"><span>點</span><strong>現場點單</strong><small>建立新訂單</small></button>
+              <button type="button" data-route-shortcut="orders"><span>單</span><strong>處理訂單</strong><small>查看待處理</small></button>
+              <button type="button" data-route-shortcut="dine"><span>桌</span><strong>堂食狀態</strong><small>查看座位</small></button>
+              <button type="button" data-route-shortcut="more"><span>多</span><strong>更多工具</strong><small>售罄及系統</small></button>
+            </div>
+          </section>
+        </section>
+      </main>
+
+      <div id="navigation-slot"></div>
+    </div>
+    <script type="module" src="./shell.js"></script>
+  </body>
+</html>
