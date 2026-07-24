@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-HK">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#f8f6f2" />
+    <title>磨飯 SMM｜手機視覺驗收</title>
+    <link rel="stylesheet" href="/src-native/qa-viewer/smm-viewer.css" />
+  </head>
+  <body>
+    <header class="smm-qa-toolbar">
+      <a href="/native-qa-viewer.html" aria-label="返回選擇器">←</a>
+      <div>
+        <p>SMM Visual QA</p>
+        <strong>手機原生排版</strong>
+      </div>
+      <span>Mobile</span>
+    </header>
+
+    <main class="smm-qa-stage">
+      <iframe
+        title="SMM 手機營運端預覽"
+        src="/src-native/shells/smm/index.html"
+      ></iframe>
+    </main>
+
+    <footer class="smm-qa-note">
+      SMM 會按手機闊度重新排版，用作輔助 SMT 點單及營運；此畫面唔代表 SMT 1280×800 平板版。
+    </footer>
+  </body>
+</html>
