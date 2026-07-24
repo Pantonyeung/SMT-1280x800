@@ -26,7 +26,7 @@ function setInteraction(enabled) {
 }
 
 targetButtons.forEach((button) => {
-  button.addEventListener('click', () => setTarget(button.dataset.target ?? '/index.html'));
+  button.addEventListener('click', () => setTarget(button.dataset.target ?? '/src-native/shells/smt/index.html'));
 });
 
 interactionToggle?.addEventListener('click', () => {
@@ -35,5 +35,9 @@ interactionToggle?.addEventListener('click', () => {
 });
 
 const requestedTarget = new URL(window.location.href).searchParams.get('target');
-setTarget(requestedTarget?.startsWith('/') ? requestedTarget : '/index.html');
+const initialTarget = frame instanceof HTMLIFrameElement
+  ? frame.getAttribute('src') ?? '/src-native/shells/smt/index.html'
+  : '/src-native/shells/smt/index.html';
+
+setTarget(requestedTarget?.startsWith('/') ? requestedTarget : initialTarget);
 setInteraction(false);
