@@ -1,0 +1,31 @@
+:root {
+  --app-width: 1280px;
+  --app-height: 800px;
+  --header-height: 56px;
+  --nav-height: 64px;
+  --rail-width: 148px;
+  --cart-width: 342px;
+  --gap-1: 4px;
+  --gap-2: 8px;
+  --gap-3: 12px;
+  --gap-4: 16px;
+  --gap-5: 20px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --touch-target: 44px;
+  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang HK", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  --color-bg: #f6f1eb;
+  --color-surface: #ffffff;
+  --color-surface-muted: #eee7df;
+  --color-text: #2f2722;
+  --color-text-muted: #796b61;
+  --color-line: #ded4ca;
+  --color-brand: #e95f2c;
+  --color-brand-strong: #c9471d;
+  --color-success: #21835b;
+  --color-shadow: rgb(61 44 34 / 12%);
+  --shadow-card: 0 8px 24px var(--color-shadow);
+  --motion-fast: 140ms;
+  --motion-standard: 220ms;
+}
